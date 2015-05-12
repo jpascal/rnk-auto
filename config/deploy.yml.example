@@ -4,6 +4,6 @@ default: &default
   application: rnk-auto
   home_path: /home/rnk-auto/application
   deploy_to: /home/rnk-auto
-  repo_url: git@bitbucket.org:eshurmin/rnk-auto.git
+  repo_url: git@github.com:jpascal/rnk-auto.git
 production:
   <<: *default
