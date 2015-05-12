@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative File.expand_path('../../config/boot', __FILE__)
+
+RNK::Request.new.perform(false)

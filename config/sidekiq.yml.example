@@ -1,0 +1,9 @@
+---
+:verbose: false
+:environment: production
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+:concurrency: 1
+:timeout: 30
+:require: ./config/sidekiq.rb
+:daemon: true

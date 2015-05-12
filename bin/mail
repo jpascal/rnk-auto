@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require_relative File.expand_path('../../config/boot', __FILE__)
+
+file = ARGV.first
+path = File.join(RNK.root,'files' , file)
+
+mail = Mailer.notify('Файл выгрузки ' + path)
+mail.add_file(path)
+mail.deliver!

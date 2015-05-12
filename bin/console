@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require_relative File.expand_path('../../config/boot', __FILE__)
+
+require 'irb'
+
+IRB.start(RNK.root)

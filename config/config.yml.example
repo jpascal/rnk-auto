@@ -1,0 +1,31 @@
+default: &default
+  redis:
+    url: redis://localhost:7372/1
+    size: 1
+    namespace: rnk
+  wsdl: http://vigruzki.rkn.gov.ru/services/OperatorRequest/?wsdl
+  operator:
+    name: <name>
+    inn: <inn>
+    ogrn: <ogrn>
+    email: <email>
+  job:
+    cron: '00 8 * * *'
+  smtp:
+    :to: emails, emails
+    :from: from@mail
+    :address: localhost
+    :port: 25
+    :domain: domain
+    :user_name: user
+    :password: password
+    :authentication: :plain
+    :enable_starttls_auto: true
+development:
+  <<: *default
+  request:
+    format: 2.1
+production:
+  <<: *default
+  request:
+    format: 2.0
