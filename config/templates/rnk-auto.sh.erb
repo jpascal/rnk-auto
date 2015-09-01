@@ -11,6 +11,9 @@
 
 RETVAL=0
 
+export PATH=/opt/cprocsp/bin/ia32/:$PATH
+export PATH=/opt/cprocsp/sbin/ia32/:$PATH
+
 status() {
   ps -U <%= fetch(:user) %> -u <%= fetch(:user) %> u | grep 'sidekiq [0-9].[0-9].[0-9]' | grep -v grep > /dev/null
   return $?
