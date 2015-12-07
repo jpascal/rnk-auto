@@ -3,3 +3,6 @@ request_*.sig
 request_*.xml
 archive
 response.zip
+config/deploy.yml
+config/config.yml
+config/sidekiq.yml

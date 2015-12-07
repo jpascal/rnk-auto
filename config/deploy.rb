@@ -38,7 +38,7 @@ set :stage, :production
 set :keep_releases, 5
 
 set :rbenv_type, :system
-set :rbenv_ruby, '2.1.0'
+set :rbenv_ruby, '2.2.2'
 
 set :sidekiq_config, File.join(release_path,'config', 'sidekiq.yml')
 set :sidekiq_cmd, "#{fetch(:bundle_cmd, "bundle")} exec sidekiq"
