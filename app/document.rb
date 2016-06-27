@@ -1,4 +1,4 @@
-class Document < Struct.new(:name, :inn, :ogrn, :email)
+class Document < Struct.new(:name, :inn, :ogrn, :email, :csptestf)
   def initialize(args)
     args.each do |key, value|
       self.send("#{key}=", value);
@@ -19,7 +19,7 @@ class Document < Struct.new(:name, :inn, :ogrn, :email)
   def save
     tmp = File.join RNK.root, 'tmp', 'request'
     File.write(tmp+'.xml', self.to_xml)
-    `csptestf -sfsign -sign -detached -add -in #{tmp}.xml -out #{tmp}.sig -my #{self.email}`
+    `#{self.csptestf} -sfsign -sign -detached -add -in #{tmp}.xml -out #{tmp}.sig -my #{self.email}`
     @save = true
   end
   def destroy

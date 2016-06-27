@@ -8,7 +8,7 @@ module RNK
         # Нету кода запроса, надо отправить запрос
         logger.info 'Send new request.'
 
-        document = Document.new(RNK.config['operator'])
+        document = Document.new(RNK.config['operator'].merge(csptestf: RNK.config['csptestf']))
         document.save
 
         # Отправляем запрос на сервер РКН
