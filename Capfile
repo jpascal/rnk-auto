@@ -20,7 +20,7 @@ end
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
-def config(key)
+def config_yml(key)
   @deploy_config ||= YAML.load_file(File.expand_path('../config/deploy.yml',__FILE__))[fetch(:stage).to_s]
   @deploy_config[key.to_s]
 end

@@ -1,14 +1,17 @@
 # config valid only for current version of Capistrano
 lock '3.5.0'
 
-set :application, config(:application)
-set :repo_url, config(:repo_url)
+# Default stage
+set :stage, :production
 
-set :user, config(:user)
+set :application, config_yml(:application)
+set :repo_url, config_yml(:repo_url)
+
+set :user, config_yml(:user)
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, config(:deploy_to)
-set :home_path, config(:home_path)
+set :deploy_to, config_yml(:deploy_to)
+set :home_path, config_yml(:home_path)
 
 # Default value for :scm is :git
 set :scm, :git
@@ -27,9 +30,6 @@ set :linked_files, fetch(:linked_files, []).push('config/config.yml','config/sid
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp', 'files')
-
-# Default stage
-set :stage, :production
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

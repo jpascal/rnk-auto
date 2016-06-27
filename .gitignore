@@ -7,3 +7,4 @@ config/deploy.yml
 config/config.yml
 config/sidekiq.yml
 log/capistrano.log
+.idea
